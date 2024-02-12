@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">-
-<link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      position: relative;
+    }
+    .image-container {
+      top: 0;
+      right: 0;
+      transform: rotate(-90deg); /* Rotate the image 90 degrees to the left */
+      transform-origin: top right; /* Set the rotation origin to the top right */
+    }
+    .image {
+      display: block;
+    }
+  </style>
 </head>
-<div class="container">
-  <div class="content">Content 1</div>
-  <div class="content">Content 2</div>
-  <div class="content">Content 3</div>
-  <div class="content">Content 4</div>
-  <div class="content">Content 5</div>
-  <div class="content">Content 6</div>
-  <div class="content">Content 7</div>
-</div>
 <body>
-<!-- partial -->
-  <script  src="./script.js"></script>
+  <div class="container">
+    <div class="image-container">
+      <img src="./media/bready1.png" class="image" alt="Your Image">
+    </div>
+  </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <!-- <script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".container",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0,
+        markers: true // for debugging, remove in production
+      }
+    });
+  
+    tl.to(".image-container", {
+      x: -40000,
+      duration: 1,
+      position: "fixed",
+      top: 0
+    });
+  </script> -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".container",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0,
+        onUpdate: function (self) {
+          self.scrollTrigger.vars.trigger.addEventListener("mousewheel", function (event) {
+            if (event.button === 1) {
+              gsap.to(".image-container", {
+                x: "+=500",
+                duration: 0.5,
+                onUpdate: function () {
+                  var imageContainer = document.querySelector(".image-container");
+                  var imageWidth = imageContainer.offsetWidth;
+                  var containerWidth = imageContainer.parentElement.offsetWidth;
+                  var threshold = containerWidth / 2 - imageWidth / 2;
+  
+                  if (Math.abs(imageContainer.getBoundingClientRect().x) >= threshold) {
+                    imageContainer.style.opacity = 0;
+                  } else {
+                    imageContainer.style.opacity = 1;
+                  }
+                }
+              });
+            }
+          });
+        },
+        markers: true // for debugging, remove in production
+      }
+    });
+  
+    tl.to(".image-container", {
+      x: -10000,
+      duration: 1
+    });
+  </script>
 </body>
 </html>
