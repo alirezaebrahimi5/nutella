@@ -1,0 +1,18 @@
+  .container {
+    width: 180px;
+    height: 600px;
+    overflow-y: scroll;
+   position: absolute;
+   top: 0;
+    transform: rotate(-90deg);
+  }
+  
+  .content {
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+  
+    background-color: #a8a8df;
+    
+    transform: rotate(90deg);
+  }
