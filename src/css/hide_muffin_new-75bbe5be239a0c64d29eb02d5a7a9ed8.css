@@ -1,0 +1,79 @@
+.product-hero .image_animate .new{
+    display:none!important;
+  }
+   @media (max-width: 767px) {
+   body .parent-theme-xmas.recipe-full {
+      padding-top: 112px;
+    }
+   }
+  /*
+  body .parent-theme-xmas .related-mini .bot:before {
+      background-image: none;
+  }
+  
+  body .xmas-related-block {
+      background-image: none;
+  }
+  
+  body .parent-theme-xmas .recipe-full-top {
+      background: none;
+  }
+  
+  body .parent-theme-xmas.recipe-full:after,
+  body .parent-theme-xmas .paragraph-ingredients-block:first-child:before,
+  body .theme-xmas.sub-hub:after,
+  body .theme-xmas.sub-hub .header:after,
+  body .theme-xmas .recipe-list .bot:after,
+  body .parent-theme-xmas .related-mini:before {
+      bottom: -56px;
+    height              : 82px;
+    content             : "";
+    display             : block;
+    width : 100%;
+    left : 0;
+    background-size     : auto 100%;
+    background-position: center;
+    background-image    : url("https://ferrero-lampd9-qa-static.s3.eu-west-1.amazonaws.com/xmas-nutella-com/pattern-red.png?t=1707463836");
+    background-repeat: repeat-x;
+  }
+  
+  body .theme-xmas.sub-hub .header:after {
+      top: unset;
+  }
+  
+  body .parent-theme-xmas.recipe-full:after,
+  body .theme-xmas.sub-hub:after {
+      background-color: #bd1d10;
+  }
+  
+  body .parent-theme-xmas .paragraph-ingredients-block:first-child:before {
+      bottom: 100%;
+      margin-bottom: 0;
+  }
+  
+  body .paragraph-slider .xmas-strip {
+        position: absolute;
+      bottom: em(-56px);
+      height              : em(82px);
+      content             : "";
+      display             : block;
+      width : 100%;
+      left : 0;
+      background-size     : auto 100%;
+      background-position: center;
+      background-image    : url("https://ferrero-lampd9-qa-static.s3.eu-west-1.amazonaws.com/xmas-nutella-com/pattern-red.png?t=1707463836");
+      background-repeat: repeat-x;
+  }
+  
+  body .parent-theme-xmas .paragraph-ingredients-block {
+      background: #bd1d10;
+  }
+  
+  body .theme-xmas .recipe-list .bot {
+      background: #bd1d10;
+  }
+  
+  body .xmas-related-block-bot:before {
+      background: #bd1d10;
+  }
+  */
